@@ -1,0 +1,33 @@
+{
+  "name": "goiteens-hw-crud",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /hw-crud/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
+    "server": "npx json-server students.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Timupas/goiteens-hw-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Timupas/goiteens-hw-crud/issues"
+  },
+  "homepage": "https://github.com/Timupas/goiteens-hw-crud#readme",
+  "dependencies": {
+    "@pnotify/mobile": "^5.2.0",
+    "parcel": "^2.16.4"
+  },
+  "devDependencies": {
+    "@pnotify/core": "^5.2.0",
+    "gh-pages": "^6.3.0"
+  }
+}
