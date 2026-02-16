@@ -207,11 +207,11 @@
       });
     }
   }
-})({"kroPm":[function(require,module,exports,__globalThis) {
+})({"5j6Kf":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
-var HMR_SERVER_PORT = 53637;
+var HMR_SERVER_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "439701173a9199ea";
 var HMR_USE_SSE = false;
@@ -718,7 +718,7 @@ var _core = require("@pnotify/core");
 var _pnotifyCss = require("@pnotify/core/dist/PNotify.css");
 var _brightThemeCss = require("@pnotify/core/dist/BrightTheme.css");
 var _pnotifyMobileCss = require("@pnotify/mobile/dist/PNotifyMobile.css");
-const formEl = document.querySelector("#add-student-form");
+const form = document.querySelector("#add-student-form");
 const tBody = document.querySelector("#students-table tbody");
 let editStudentId = null;
 // Функція для отримання всіх студентів
@@ -727,7 +727,7 @@ function getStudents() {
 }
 // Функція для відображення студентів у таблиці
 function renderStudents(students) {
-    tableBody.innerHTML = "";
+    tBody.innerHTML = "";
     const item = students.map((student)=>{
         return `<tr id="tr">
             <td>${student.id}</td>
@@ -742,7 +742,7 @@ function renderStudents(students) {
         </div></td>
         </tr>`;
     }).join("");
-    tableBody.innerHTML = item;
+    tBody.innerHTML = item;
 }
 // Функція для додавання нового студента
 function addStudent(e) {
@@ -802,17 +802,17 @@ function fillFormForEdit(id) {
         form.email.value = student.email;
         form.isEnrolled.checked = student.isEnrolled;
         editStudentId = id;
-        form.querySelector("button").textContent = "\u041E\u043D\u043E\u0432\u0438\u0442\u0438 \u0434\u0430\u043D\u0456";
+        form.querySelector("button").textContent = "\u041E\u043D\u043E\u0432\u0438\u0442\u0438 \u0434\u0430\u043D\u0456 \u0441\u0442\u0443\u0434\u0435\u043D\u0442\u0430";
         form.scrollIntoView({
             behavior: "smooth"
         });
         (0, _core.info)({
-            title: "\u0420\u0435\u0434\u0430\u0433\u0443\u0432\u0430\u0442\u0438",
-            text: `\u{422}\u{435}\u{43F}\u{435}\u{440} \u{43C}\u{43E}\u{436}\u{435}\u{442}\u{435} \u{437}\u{43C}\u{456}\u{43D}\u{438}\u{442}\u{438} \u{434}\u{430}\u{43D}\u{456}`
+            title: "Edit",
+            text: `\u{422}\u{435}\u{43F}\u{435}\u{440} \u{43C}\u{43E}\u{436}\u{43D}\u{430} \u{437}\u{43C}\u{456}\u{43D}\u{438}\u{442}\u{438} \u{434}\u{430}\u{43D}\u{456} \u{441}\u{442}\u{443}\u{434}\u{435}\u{43D}\u{442}\u{430}`
         });
     });
 }
-tableBody.addEventListener("click", (event)=>{
+tBody.addEventListener("click", (event)=>{
     const action = event.target.dataset.action;
     if (!action) return;
     const tr = event.target.closest("tr");
@@ -3459,6 +3459,6 @@ var global = arguments[3];
     });
 });
 
-},{}],"c4y47":[function() {},{}],"grIyt":[function() {},{}],"iv3sV":[function() {},{}]},["kroPm","a0t4e"], "a0t4e", "parcelRequire4d9a", {})
+},{}],"c4y47":[function() {},{}],"grIyt":[function() {},{}],"iv3sV":[function() {},{}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire4d9a", {})
 
 //# sourceMappingURL=goiteens-hw-crud.31b563d9.js.map
