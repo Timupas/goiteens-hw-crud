@@ -3,7 +3,7 @@ import "@pnotify/core/dist/PNotify.css";
 import "@pnotify/core/dist/BrightTheme.css";
 import "@pnotify/mobile/dist/PNotifyMobile.css";
 
-const formEl = document.querySelector("#add-student-form");
+const form = document.querySelector("#add-student-form");
 const tBody = document.querySelector("#students-table tbody");
 
 let editStudentId = null;
@@ -17,7 +17,7 @@ function getStudents() {
 
 // Функція для відображення студентів у таблиці
 function renderStudents(students) {
-  tableBody.innerHTML = "";
+  tBody.innerHTML = "";
 
   const item = students
     .map((student) => {
@@ -36,7 +36,7 @@ function renderStudents(students) {
     })
     .join("");
 
-  tableBody.innerHTML = item;
+  tBody.innerHTML = item;
 }
 
 // Функція для додавання нового студента
@@ -104,18 +104,18 @@ function fillFormForEdit(id) {
       form.isEnrolled.checked = student.isEnrolled;
 
       editStudentId = id;
-      form.querySelector("button").textContent = "Оновити дані";
+      form.querySelector("button").textContent = "Оновити дані студента";
 
       form.scrollIntoView({ behavior: "smooth" });
 
       info({
-        title: "Редагувати",
-        text: `Тепер можете змінити дані`,
+        title: "Edit",
+        text: `Тепер можна змінити дані студента`,
       });
     });
 }
 
-tableBody.addEventListener("click", (event) => {
+tBody.addEventListener("click", (event) => {
   const action = event.target.dataset.action;
   if (!action) return;
 
